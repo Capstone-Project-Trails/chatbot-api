@@ -1,0 +1,28 @@
+{
+  "name": "wisata-recommendation-api",
+  "version": "1.0.0",
+  "description": "API untuk rekomendasi wisata berdasarkan lokasi user",
+  "main": "src/server/server.js",
+  "scripts": {
+    "start": "node src/server/server.js"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.11.2",
+    "@tensorflow/tfjs": "^4.20.0",
+    "@tensorflow/tfjs-node": "^3.21.1",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-ws": "^5.0.2",
+    "firebase-admin": "^12.1.1",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
+  },
+  "author": "Author Name",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.4.0",
+    "ws": "^8.17.1"
+  }
+}

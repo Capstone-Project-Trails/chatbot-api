@@ -1,0 +1,58 @@
+{
+    "FindHotel": [
+        "Here are some hotel recommendations in {LOCATION}. Feel free to choose which one suits you the best!",
+        "Looking for a place to stay in {LOCATION}? Here are some great hotel options.",
+        "Need a hotel in {LOCATION}? Check out these recommendations.",
+        "Check out these hotels in {LOCATION}. They offer great comfort and service!",
+        "Planning a stay in {LOCATION}? Here are some rated hotels you might like."
+    ],
+    "FindRestaurant": [
+        "Here are some restaurant recommendations in {LOCATION}. Enjoy your meal!",
+        "Looking for a place to eat in {LOCATION}? Here are some top picks.",
+        "Need dining options in {LOCATION}? These restaurants come highly recommended.",
+        "Hungry in {LOCATION}? Check out these popular restaurants.",
+        "Craving a meal in {LOCATION}? Here are some excellent dining spots to consider."
+    ],
+    "FindTouristAttraction": [
+        "Here are some must-see tourist attractions in {LOCATION}. Enjoy your visit!",
+        "Looking for places to explore in {LOCATION}? Check out these popular attractions.",
+        "Discover the top tourist attractions in {LOCATION}. You won't want to miss these!",
+        "Visiting {LOCATION}? Here are some amazing tourist spots you should definitely see.",
+        "Check out these attractions in {LOCATION}. Perfect for an unforgettable experience!"
+    ],
+    "FindCafe": [
+        "Looking for a place to relax in {LOCATION}? Here are some cafes you might love.",
+        "Need a coffee break in {LOCATION}? Check out these cozy cafes.",
+        "Here are some great cafes in {LOCATION}. Perfect spots for coffee and snacks!",
+        "Discover these cafes in {LOCATION}. Ideal for a casual hangout or work.",
+        "Check out these popular cafes in {LOCATION}. Enjoy a great ambiance and delicious coffee!"
+    ],
+    "FindBar": [
+        "Looking for a night out in {LOCATION}? Here are some bars you might enjoy.",
+        "Need a place to unwind in {LOCATION}? Check out these vibrant bars.",
+        "Here are some great bars in {LOCATION}. Perfect for a fun evening!",
+        "Discover these bars in {LOCATION}. Ideal spots for drinks and good times.",
+        "Check out these popular bars in {LOCATION}. Enjoy great drinks and atmosphere!"
+    ],
+    "FindNightlife": [
+        "Looking for a lively night out in {LOCATION}? Check out these nightlife spots.",
+        "Need some nightlife recommendations in {LOCATION}? Here are some great options.",
+        "Discover the vibrant nightlife in {LOCATION}. These spots are a must-visit!",
+        "Here are some popular nightlife venues in {LOCATION}. Enjoy your evening!",
+        "Check out these nightlife attractions in {LOCATION}. Perfect for an unforgettable night!"
+    ],
+    "FindStore": [
+        "Looking for places to shop in {LOCATION}? Here are some stores you might like.",
+        "Need to find a store in {LOCATION}? Check out these great options.",
+        "Discover some fantastic stores in {LOCATION}. Happy shopping!",
+        "Here are some popular stores in {LOCATION}. Enjoy your shopping trip!",
+        "Check out these stores in {LOCATION}. Perfect for finding what you need!"
+    ],
+    "FindHospital": [
+        "Looking for medical assistance in {LOCATION}? Here are some hospitals you can visit.",
+        "Need to find a hospital in {LOCATION}? Check out these recommended options.",
+        "Here are some hospitals in {LOCATION}. They offer excellent care and services.",
+        "Discover these hospitals in {LOCATION}. Ideal for any medical needs.",
+        "Check out these hospitals in {LOCATION}. Providing quality healthcare services."
+    ]
+}
