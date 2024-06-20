@@ -1,61 +1,45 @@
 const express = require('express');
-const http = require('http');
 const bodyParser = require('body-parser');
-const admin = require('firebase-admin');
-const { loadModel } = require('../services/loadModel');
-const { handleChatRequest, handleSocketChat } = require('./handler');
-const dotenv = require('dotenv');
-const socketIo = require('socket.io');
-
-dotenv.config();
-
-const serviceAccount = require('../../serviceAccountKey.json');
-
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://trails-capstoneproject.firebaseio.com'
-  });
-}
-
+const { loadTemplate, loadCombinedData, loadFinalData } = require('../services/loadTemplate');
+const { handleChatRequest } = require('./handler');
 const app = express();
-const server = http.createServer(app);
-const io = socketIo(server, {
-  cors: {
-    origin: '*',
-  }
-});
-
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 app.use(bodyParser.json());
 
-loadModel(process.env.MODEL_URL)
-  .then(model => {
-    app.set('model', model);
-    console.log('Model loaded successfully');
+const responseTemplatePath = process.env.RESPONSE_TEMPLATE_PATH || './data/response.json';
+const combinedDataPath = process.env.COMBINED_DATA_PATH || './data/combined_data.json';
+const finalDataPath = process.env.FINAL_DATA_PATH || './data/bali_final.json';
+
+loadTemplate(responseTemplatePath)
+  .then(template => {
+    app.set('responseTemplate', template);
+    console.log('Template response successfully loaded');
   })
   .catch(error => {
-    console.error('Failed to load model:', error);
-    process.exit(1);
+    console.error('Failed to load response template:', error);
+  });
+
+loadCombinedData(combinedDataPath)
+  .then(combinedData => {
+    app.set('combinedData', combinedData);
+    console.log('Combined data successfully loaded');
+  })
+  .catch(error => {
+    console.error('Failed to load combined data:', error);
+  });
+
+loadFinalData(finalDataPath)
+  .then(finalData => {
+    app.set('finalData', finalData);
+    console.log('Final data successfully loaded');
+  })
+  .catch(error => {
+    console.error('Failed to load final data:', error);
   });
 
 app.post('/api/chat', handleChatRequest);
 
-io.on('connection', (socket) => {
-  console.log('New client connected');
-
-  socket.on('chat message', async (msg) => {
-    console.log('Received message:', msg);
-    const response = await handleSocketChat(msg, app);
-    socket.emit('chat response', response);
-  });
-
-  socket.on('disconnect', () => {
-    console.log('Client disconnected');
-  });
-});
-
-server.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
