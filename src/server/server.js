@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const { loadTemplate, loadCombinedData, loadFinalData } = require('../services/loadTemplate');
 const { handleChatRequest } = require('./handler');
 const app = express();
-const port = 3000;
+const port = 8080;
 
 app.use(bodyParser.json());
 
