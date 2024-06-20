@@ -31,4 +31,5 @@ function handleChatRequest(req, res) {
 
 module.exports = {
   handleChatRequest,
+  getResponse
 };
